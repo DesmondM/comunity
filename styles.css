@@ -1,0 +1,912 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: black;
+}
+
+#container {
+  width: 95vw;
+  height: 768px;
+  min-width: 780px;
+  margin: 30px auto 30px;
+  background-color: whitesmoke;
+  display: grid;
+  grid-template-columns: [col-start] 1fr [col-2] 12fr [col-3] 12fr [col-end];
+  grid-template-rows: 1fr 4fr;
+  grid-auto-rows: 50px auto 100px;
+  grid-template-areas:
+    "header header header" " sidebar main main"
+    "footer footer footer";
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #222;
+  font-size: 2em;
+  font-family: Montserrat, sans-serif;
+  background-color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.header {
+  grid-area: header;
+  border-radius: 0px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  height: 50px;
+  background: linear-gradient(159deg, #00cef0 -4%, #00cdef -3%, #00a0dc 41%);
+}
+.main {
+  grid-area: main;
+  height: 770px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 55px 30px 18fr;
+  grid-template-areas: "breadcrumb" "nav-bar" "content-area";
+}
+.sidebar {
+  grid-area: sidebar;
+  font-size: 16px;
+  //align-items: stretch;
+  width: 55px;
+  display: grid;
+  //grid-template-columns: 50px;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 8fr;
+  grid-template-areas: "icon-1" "icon-2" "icon-3" "icon-4" "icon-5";
+  grid-auto-rows: minmax(min-content, max-content);
+
+  height: 767px;
+  // margin: 0 20px 0 0;
+  // padding: 67px 0 515px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  background-color: #f8f8f8;
+}
+.footer {
+  grid-area: footer;
+}
+
+/* Sidebar elements */
+.home-icon {
+  margin-top: 20px;
+
+  grid-area: icon-1;
+}
+.home-icon:hover {
+  grid-area: icon-1;
+  background: #83c184;
+  display: grid;
+  padding: 20px;
+  margin-left: 0px;
+}
+
+.search-icon {
+  margin-top: 20px;
+
+  grid-area: icon-2;
+}
+.search-icon:hover {
+  grid-area: icon-2;
+  background: #83c184;
+  display: grid;
+  padding: 20px;
+  margin-left: 0px;
+}
+
+.list-icon {
+  margin-top: 20px;
+
+  grid-area: icon-3;
+}
+.list-icon:hover {
+  grid-area: icon-3;
+  background: #83c184;
+  display: grid;
+  padding: 20px;
+  margin-left: 0px;
+}
+
+.person-icon {
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  grid-area: icon-4;
+}
+.person-icon:hover {
+  grid-area: icon-4;
+  background: #83c184;
+  display: grid;
+  padding: 20px;
+  margin-left: 0px;
+}
+
+.nav {
+  grid-area: nav-bar;
+  display: grid;
+  margin-top: 55px;
+  height: 15px;
+  grid-template-rows: 1fr;
+  grid-template-columns: 35px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "navSpacer col-1 col-2 col-3 col-4 col-5 col-6 col-7 col-9 col-9";
+}
+
+.nav-One {
+  display: flex;
+  grid-area: col-1;
+  border-radius: 8px 8px 0px 0px;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  padding: 20px;
+  margin: auto;
+  margin-botton: 0px;
+  color: #4a4a4a;
+  align-items: stretch;
+}
+.nav-One:hover {
+  display: grid;
+  background: #f8f8f8;
+  border-left: solid 1px #d9d8d8;
+  border-right: solid 1px #d9d8d8;
+  border-top: solid 1px #d9d8d8;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+.nav-Two {
+  display: grid;
+  grid-area: col-2;
+  border-radius: 8px 8px 0px 0px;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  padding: 20px;
+  margin: auto;
+  margin-botton: 0px;
+  color: #4a4a4a;
+  align-items: stretch;
+}
+.nav-Two:hover {
+  display: grid;
+  background: #f8f8f8;
+  border-left: solid 1px #d9d8d8;
+  border-right: solid 1px #d9d8d8;
+  border-top: solid 1px #d9d8d8;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+.nav-Three {
+  display: grid;
+  grid-area: col-3;
+  border-radius: 8px 8px 0px 0px;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  padding: 20px;
+  margin: auto;
+  margin-botton: 0px;
+  color: #4a4a4a;
+  align-items: stretch;
+}
+.nav-Three:hover {
+  display: grid;
+  background: #f8f8f8;
+  border-left: solid 1px #d9d8d8;
+  border-right: solid 1px #d9d8d8;
+  border-top: solid 1px #d9d8d8;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+.nav-Four {
+  display: grid;
+  grid-area: col-4;
+  border-radius: 8px 8px 0px 0px;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  padding: 20px;
+  margin: auto;
+  margin-botton: 0px;
+  color: #4a4a4a;
+  align-items: stretch;
+}
+.nav-Four:hover {
+  display: grid;
+  background: #f8f8f8;
+  border-left: solid 1px #d9d8d8;
+  border-right: solid 1px #d9d8d8;
+  border-top: solid 1px #d9d8d8;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.nav-Five {
+  display: flex;
+  grid-area: col-5;
+  border-radius: 8px 8px 0px 0px;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  padding: 20px;
+  margin: auto;
+  margin-botton: 0px;
+  color: #4a4a4a;
+  align-items: stretch;
+}
+.nav-Five:hover {
+  display: grid;
+  background: #f8f8f8;
+  border-left: solid 1px #d9d8d8;
+  border-right: solid 1px #d9d8d8;
+  border-top: solid 1px #d9d8d8;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+.nav-Six {
+  display: flex;
+  grid-area: col-6;
+  border-radius: 8px 8px 0px 0px;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  padding: 20px;
+  margin: auto;
+  margin-botton: 0px;
+  color: #4a4a4a;
+  align-items: stretch;
+}
+.nav-Six:hover {
+  display: grid;
+  background: #f8f8f8;
+  border-left: solid 1px #d9d8d8;
+  border-right: solid 1px #d9d8d8;
+  border-top: solid 1px #d9d8d8;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.content-main-box {
+  grid-area: content-area;
+  display: grid;
+  grid-template-columns: 3fr 20px 7fr;
+  grid-template-areas: "card scroller details";
+  background: #f8f8f8;
+  border-radius: 20px;
+  border: solid 1px #d9d8d8;
+  grid-gap: 8px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+/* Breadcrumb elements */
+.breadcrumb-bar {
+  grid-area: breadcrumb;
+  background: #f8f8f8;
+
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  display: grid;
+  grid-template-columns: 400px 300px;
+
+  justify-items: left;
+}
+
+.Breadcrumb-Level-One {
+  // margin: 0 16px 0 0;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: #4a4a4a;
+  padding: 15px;
+  align-text: left;
+  justify-items: left;
+}
+
+/* ## The Cards Next to the Sidebar */
+
+.for-cards {
+  grid-area: card;
+  display: grid;
+  margin-top: 10px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-gap: 1px;
+  align-items: center;
+  grid-template-areas: "active" "inactive1" "inactive2" "inactive3";
+}
+
+.active-card {
+  grid-area: active;
+  display: grid;
+  grid-template-rows: 2fr 1fr 1fr 2fr;
+  grid-template-areas: "cardHeader" "fieldName1" "fieldName2" "spacer";
+  border-width: 6px;
+  border-style: solid;
+  border-image: linear-gradient(159deg, #00cef0 -4%, #00cdef -3%, #00a0dc 41%) 1;
+  border-radius: 10px;
+  height: 115px;
+  margin-left: 15px;
+}
+
+.active-card-header {
+  grid-area: cardHeader;
+  display: grid;
+  margin-top: 15px;
+  grid-template-columns: 1fr 7fr;
+  grid-template-areas: "hIcon hText";
+  font-weight: bold;
+  color: #4a4a4a;
+}
+
+.active-card-header-icon {
+  grid-area: hIcon;
+  font-size: 18px;
+}
+.active-card-header-text {
+  grid-area: hText;
+  font-size: 14px;
+  text-align: left;
+}
+
+.active-card-fields1 {
+  grid-area: fieldName1;
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  grid-template-areas: "emptySpace fieldText1";
+  font-weight: regular;
+  color: #4a4a4a;
+}
+
+.active-card-fieldName1 {
+  grid-area: fieldText1;
+  font-size: 12px;
+  text-align: left;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+}
+.active-card-fields2 {
+  grid-area: fieldName2;
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  grid-template-areas: "emptySpace fieldText2";
+  font-weight: regular;
+  color: #4a4a4a;
+}
+
+.active-card-fieldName2 {
+  grid-area: fieldText2;
+  font-size: 12px;
+  text-align: left;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+/* inactive Cards */
+
+/* Inactive1 */
+.inactive-card1 {
+  grid-area: inactive1;
+  grid-template-rows: 2fr 1fr 1fr 2fr;
+  grid-template-areas: "Inactive1Header" "Inactive1fieldName1" "Inactive1fieldName2" "spacer";
+  border: solid 6px #979797;
+  border-radius: 10px;
+  height: 115px;
+  margin-top: 5px;
+  margin-left: 15px;
+}
+
+.inactive1-card-header {
+  grid-area: Inactive1Header;
+  display: grid;
+  margin-top: 15px;
+  grid-template-columns: 1fr 7fr;
+  grid-template-areas: "Inactive1hIcon Inactive1hText";
+  font-weight: normal;
+  color: #4a4a4a;
+}
+
+.inactive1-card-header-icon {
+  grid-area: Inactive1hIcon;
+  font-size: 18px;
+}
+.inactive1-card-header-text {
+  grid-area: Inactive1hText;
+  font-size: 14px;
+  text-align: left;
+}
+
+.inactive1-card-fields1 {
+  grid-area: Inactive1fieldName1;
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  grid-template-areas: "Inactive1emptySpace2 Inactive1fieldText1";
+  font-weight: regular;
+  color: #4a4a4a;
+}
+
+.inactive1-card-fieldName1 {
+  grid-area: Inactive1fieldText1;
+  font-size: 12px;
+  text-align: left;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+}
+.inactive1-card-fields2 {
+  grid-area: Inactive1fieldName2;
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  grid-template-areas: "Inactive1emptySpace2 Inactive1fieldText2";
+  font-weight: regular;
+  color: #4a4a4a;
+}
+
+.inactive1-card-fieldName2 {
+  grid-area: Inactive1fieldText2;
+  font-size: 12px;
+  text-align: left;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+/* Inactive2 */
+.inactive-card2 {
+  grid-area: inactive2;
+  grid-template-rows: 2fr 1fr 1fr 2fr;
+  grid-template-areas: "Inactive2Header" "Inactive2fieldName1" "Inactive2fieldName2" "spacer2";
+  border: solid 6px #979797;
+  border-radius: 10px;
+  height: 115px;
+  margin-top: 5px;
+  margin-left: 15px;
+}
+
+.inactive2-card-header {
+  grid-area: Inactive2Header;
+  display: grid;
+  margin-top: 15px;
+  grid-template-columns: 1fr 7fr;
+  grid-template-areas: "Inactive2hIcon Inactive2hText";
+  font-weight: normal;
+  color: #4a4a4a;
+}
+
+.inactive2-card-header-icon {
+  grid-area: Inactive2hIcon;
+  font-size: 18px;
+}
+.inactive2-card-header-text {
+  grid-area: Inactive2hText;
+  font-size: 14px;
+  text-align: left;
+}
+
+.inactive2-card-fields1 {
+  grid-area: Inactive2fieldName1;
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  grid-template-areas: "Inactive2emptySpace2 Inactive2fieldText1";
+  font-weight: regular;
+  color: #4a4a4a;
+}
+
+.inactive2-card-fieldName1 {
+  grid-area: Inactive2fieldText1;
+  font-size: 12px;
+  text-align: left;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+}
+.inactive2-card-fields2 {
+  grid-area: Inactive2fieldName2;
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  grid-template-areas: "Inactive2emptySpace2 Inactive2fieldText2";
+  font-weight: regular;
+  color: #4a4a4a;
+}
+
+.inactive2-card-fieldName2 {
+  grid-area: Inactive2fieldText2;
+  font-size: 12px;
+  text-align: left;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+/* Inactive3 */
+.inactive-card3 {
+  grid-area: inactive3;
+  grid-template-rows: 2fr 1fr 1fr 2fr;
+  grid-template-areas: "Inactive3Header" "Inactive3fieldName1" "Inactive3fieldName2" "spacer3";
+  border: solid 6px #979797;
+  border-radius: 10px;
+  margin-top: 5px;
+  height: 115px;
+  margin-left: 15px;
+}
+
+.inactive3-card-header {
+  grid-area: Inactive3Header;
+  display: grid;
+  margin-top: 15px;
+  grid-template-columns: 1fr 7fr;
+  grid-template-areas: "Inactive3hIcon Inactive3hText";
+  font-weight: normal;
+  color: #4a4a4a;
+}
+
+.inactive3-card-header-icon {
+  grid-area: Inactive3hIcon;
+  font-size: 18px;
+}
+.inactive3-card-header-text {
+  grid-area: Inactive3hText;
+  font-size: 14px;
+  text-align: left;
+}
+
+.inactive3-card-fields1 {
+  grid-area: Inactive3fieldName1;
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  grid-template-areas: "Inactive3emptySpace2 Inactive3fieldText1";
+  font-weight: regular;
+  color: #4a4a4a;
+}
+
+.inactive3-card-fieldName1 {
+  grid-area: Inactive3fieldText1;
+  font-size: 12px;
+  text-align: left;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+}
+.inactive3-card-fields2 {
+  grid-area: Inactive3fieldName2;
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  grid-template-areas: "Inactive3emptySpace2 Inactive3fieldText2";
+  font-weight: regular;
+  color: #4a4a4a;
+}
+
+.inactive3-card-fieldName2 {
+  grid-area: Inactive3fieldText2;
+  font-size: 12px;
+  text-align: left;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+/* scrollbar */
+.main-scrollbar {
+  grid-area: scroller;
+  overflow: scroll;
+  width: 10px;
+  height: 100px;
+  margin: 15px 5px 29px;
+  border-radius: 5px;
+  background-color: #979797;
+}
+
+/* Details Table */
+.details-table {
+  grid-area: details;
+  display: grid;
+  margin-top: 10px;
+  padding: 10px;
+  grid-gap: 2px;
+  border-radius: 10px;
+  border: solid 1px #d9d8d8;
+  background-color: #fff;
+  width: 431px;
+  height: 270px;
+
+  grid-template-rows: 1fr 7fr;
+  grid-template-areas: "theader" "tdetails";
+}
+/* Details Header section */
+.details-header {
+  margin-top: 10px;
+  margin-left: 15px;
+  grid-area: theader;
+  display: grid;
+  grid-template-columns: 1fr 4fr 8fr;
+  grid-template-areas: "icon1 dheader vwDetails";
+}
+
+.details-header-icon {
+  grid-area: icon1;
+  width: 23px;
+  height: 18px;
+  margin: 6px 6px 16px;
+  font-size: 18px;
+  color: #4a4a4a;
+}
+.details-header-dheader {
+  grid-area: dheader;
+  width: 101px;
+  height: 18px;
+  margin: 6px 190px 16px 6px;
+
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4a4a4a;
+}
+.details-header-vwDetails {
+  grid-area: vwDetails;
+
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.5;
+  letter-spacing: normal;
+  color: #4a4a4a;
+}
+
+/* Details table rows section */
+.details-details {
+  grid-area: tdetails;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "detRow-1" "detRow-2" "detRow-3" "detRow-4" "detRow-5" "detRow-6" "detRow-7";
+}
+
+.details-details-row1 {
+  grid-area: detRow-1;
+  display: grid;
+  background-color: #f8f8f8;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas: "fName fValue";
+}
+.details-details-row1-fieldName {
+  grid-area: fName;
+  display: grid;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.5;
+  letter-spacing: normal;
+  color: #4a4a4a;
+}
+.details-details-row1-fieldValue {
+  grid-area: fValue;
+  display: grid;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.5;
+  letter-spacing: normal;
+  color: #4a4a4a;
+  text-align: left;
+}
+.details-details-row2 {
+  grid-area: detRow-2;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas: "fName2 fValue2";
+}
+.details-details-row2-fieldName {
+  grid-area: fName2;
+  display: grid;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.5;
+  letter-spacing: normal;
+  color: #4a4a4a;
+}
+.details-details-row2-fieldValue {
+  grid-area: fValue2;
+  display: grid;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.5;
+  letter-spacing: normal;
+  color: #4a4a4a;
+  text-align: left;
+}
+
+.details-details-row3 {
+  grid-area: detRow-3;
+  background-color: #f8f8f8;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas: "fName3 fValue3";
+}
+.details-details-row3-fieldName {
+  grid-area: fName3;
+  display: grid;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.5;
+  letter-spacing: normal;
+  color: #4a4a4a;
+}
+.details-details-row3-fieldValue {
+  grid-area: fValue3;
+  display: grid;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.5;
+  letter-spacing: normal;
+  color: #4a4a4a;
+  text-align: left;
+}
+
+.details-details-row4 {
+  grid-area: detRow-4;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas: "fName4 fValue4";
+}
+.details-details-row4-fieldName {
+  grid-area: fName4;
+  display: grid;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.5;
+  letter-spacing: normal;
+  color: #4a4a4a;
+}
+.details-details-row4-fieldValue {
+  grid-area: fValue4;
+  display: grid;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.5;
+  letter-spacing: normal;
+  color: #4a4a4a;
+  text-align: left;
+}
+
+.details-details-row5 {
+  grid-area: detRow-5;
+  display: grid;
+  background-color: #f8f8f8;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas: "fName5 fValue5";
+}
+.details-details-row5-fieldName {
+  grid-area: fName5;
+  display: grid;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.5;
+  letter-spacing: normal;
+  color: #4a4a4a;
+}
+.details-details-row5-fieldValue {
+  grid-area: fValue5;
+  display: grid;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.5;
+  letter-spacing: normal;
+  color: #4a4a4a;
+  text-align: left;
+}
+
+.details-details-row6 {
+  grid-area: detRow-6;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas: "fName6 fValue6";
+}
+.details-details-row6-fieldName {
+  grid-area: fName6;
+  display: grid;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.5;
+  letter-spacing: normal;
+  color: #4a4a4a;
+}
+.details-details-row6-fieldValue {
+  grid-area: fValue6;
+  display: grid;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.5;
+  letter-spacing: normal;
+  color: #4a4a4a;
+  text-align: left;
+}
+
+.details-details-row7 {
+  grid-area: detRow-7;
+  display: grid;
+  background-color: #f8f8f8;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas: "fName7 fValue7";
+}
+.details-details-row7-fieldName {
+  grid-area: fName7;
+  display: grid;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.5;
+  letter-spacing: normal;
+  color: #4a4a4a;
+}
+.details-details-row7-fieldValue {
+  grid-area: fValue7;
+  display: grid;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.5;
+  letter-spacing: normal;
+  color: #4a4a4a;
+  text-align: left;
+}
